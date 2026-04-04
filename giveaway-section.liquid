@@ -2,8 +2,8 @@
   <div class="gw-card">
     <div class="gw-left">
       <div class="gw-badge">🎰 IZLOZE</div>
-      <h2 class="gw-title">Piedalies un laime!</h2>
-      <p class="gw-desc">Ievadi slepeno kodu un registrejies izlozei.<br>Par katru izterto <strong>€1</strong> tu sanem papildus bileti!</p>
+      <h2 class="gw-title">Piedalies un laimē!</h2>
+      <p class="gw-desc">Ievadi slepeno kodu un reģistrējies izlozē. Par katru iztērēto <strong>€1</strong> tu saņem papildus biļeti!</p>
       <div class="gw-prizes">
         <div class="gw-prize"><span>🥇</span><div><strong>€50</strong><small>1. vieta</small></div></div>
         <div class="gw-prize"><span>🥈</span><div><strong>€20</strong><small>2. vieta</small></div></div>
@@ -12,40 +12,26 @@
     </div>
     <div class="gw-right">
       <form id="gwForm" onsubmit="return false">
-        <div class="gw-field">
-          <label class="gw-label">Slepenais kods</label>
-          <input class="gw-input gw-code" id="gwCode" type="text" placeholder="Ievadi kodu seit..." maxlength="20" autocomplete="off">
-        </div>
-        <div class="gw-field">
-          <label class="gw-label">Vards un Uzvards</label>
-          <input class="gw-input" id="gwName" type="text" placeholder="Janis Berzins">
-        </div>
+        <div class="gw-field"><label class="gw-label">Slepenais kods</label><input class="gw-input gw-code" id="gwCode" type="text" placeholder="Ievadi kodu šeit..." maxlength="20" autocomplete="off"></div>
+        <div class="gw-field"><label class="gw-label">Vārds un Uzvārds</label><input class="gw-input" id="gwName" type="text" placeholder="Jānis Bērziņš"></div>
         <div class="gw-row">
-          <div class="gw-field">
-            <label class="gw-label">Talrunis</label>
-            <input class="gw-input" id="gwPhone" type="tel" placeholder="+371 20000000">
-          </div>
-          <div class="gw-field">
-            <label class="gw-label">E-pasts</label>
-            <input class="gw-input" id="gwEmail" type="email" placeholder="janis@inbox.lv">
-          </div>
+          <div class="gw-field"><label class="gw-label">Tālrunis</label><input class="gw-input" id="gwPhone" type="tel" placeholder="+371 20000000"></div>
+          <div class="gw-field"><label class="gw-label">E-pasts</label><input class="gw-input" id="gwEmail" type="email" placeholder="janis@inbox.lv"></div>
         </div>
-        <button class="gw-btn" id="gwBtn" type="button" onclick="gwSubmit()">Piedalities izloze →</button>
+        <button class="gw-btn" id="gwBtn" type="button" onclick="gwSubmit()">Piedalīties izlozē →</button>
         <p class="gw-msg" id="gwMsg"></p>
       </form>
     </div>
   </div>
 </div>
-
 <div class="gw-overlay" id="gwOverlay">
   <div class="gw-modal">
     <div class="gw-modal-icon">🎉</div>
     <h3 class="gw-modal-title">Apsveicu!</h3>
-    <p class="gw-modal-text">Tu esi veiksmigi pietecies izlozei!<br>Mes sazinasimies ar uzvaretajiem.<br><br>⭐ Laimegu zvaigznu zimi!</p>
-    <button class="gw-modal-close" onclick="document.getElementById('gwOverlay').style.display='none'">Aizverts</button>
+    <p class="gw-modal-text">Tu esi veiksmīgi pieteicies izlozei!<br>Mēs sazināsimies ar uzvarētājiem.<br><br>⭐ Laimīgu zvaigžņu zīmi!</p>
+    <button class="gw-modal-close" onclick="document.getElementById('gwOverlay').style.display='none'">Aizvērt</button>
   </div>
 </div>
-
 <style>
 .gw-wrap{padding:60px 16px;background:#f8f6f2}
 .gw-card{max-width:1080px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 4px 32px rgba(0,0,0,.1);border:1px solid #e5e1da}
@@ -82,12 +68,11 @@
 .gw-modal-icon{font-size:3.5rem;margin-bottom:12px}
 .gw-modal-title{font-size:1.625rem;font-weight:800;color:#1a1a2e;margin:0 0 12px}
 .gw-modal-text{color:#6b7280;font-size:.9375rem;line-height:1.7;margin:0 0 24px}
-.gw-modal-close{background:#1a1a2e;color:#ffd700;border:none;padding:12px 32px;border-radius:99px;font-weight:700;font-size:.9375rem;cursor:pointer;font-family:inherit;transition:background .2s}
+.gw-modal-close{background:#1a1a2e;color:#ffd700;border:none;padding:12px 32px;border-radius:99px;font-weight:700;font-size:.9375rem;cursor:pointer;font-family:inherit}
 .gw-modal-close:hover{background:#0f3460}
 @keyframes gwPop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
 @media(max-width:768px){.gw-card{grid-template-columns:1fr}.gw-left,.gw-right{padding:36px 24px}.gw-row{grid-template-columns:1fr}.gw-title{font-size:1.5rem}}
 </style>
-
 <script>
 window.gwSubmit = async function() {
   var btn = document.getElementById('gwBtn');
@@ -96,25 +81,20 @@ window.gwSubmit = async function() {
   var name = (document.getElementById('gwName').value || '').trim();
   var phone = (document.getElementById('gwPhone').value || '').trim();
   var email = (document.getElementById('gwEmail').value || '').trim();
-  msg.className = 'gw-msg';
-  msg.textContent = '';
+  msg.className = 'gw-msg'; msg.textContent = '';
   if (!code || !name || !phone || !email) {
-    msg.textContent = 'Ludzu aizpildi visus laukus.';
-    msg.className = 'gw-msg err';
-    return;
+    msg.textContent = 'Lūdzu aizpildi visus laukus.';
+    msg.className = 'gw-msg err'; return;
   }
   if (code !== 'WINCASH26') {
-    msg.textContent = 'Nepareizs kods - parbaudi un megini velreiz!';
-    msg.className = 'gw-msg err';
-    return;
+    msg.textContent = 'Nepareizs kods — pārbaudi un mēģini vēlreiz!';
+    msg.className = 'gw-msg err'; return;
   }
   if (!email.includes('@') || !email.includes('.')) {
-    msg.textContent = 'Ievadi derigu e-pasta adresi.';
-    msg.className = 'gw-msg err';
-    return;
+    msg.textContent = 'Ievadi derīgu e-pasta adresi.';
+    msg.className = 'gw-msg err'; return;
   }
-  btn.disabled = true;
-  btn.textContent = 'Registre...';
+  btn.disabled = true; btn.textContent = 'Reģistrē...';
   try {
     var resp = await fetch('https://protective-compassion-production-ff43.up.railway.app/giveaway/enter', {
       method: 'POST',
@@ -124,21 +104,18 @@ window.gwSubmit = async function() {
     var data = await resp.json();
     if (data.success || data.alreadyEntered || data.entries >= 0 || data.message) {
       var ov = document.getElementById('gwOverlay');
-      ov.style.display = 'flex';
-      ov.className = 'gw-overlay open';
+      ov.style.display = 'flex'; ov.className = 'gw-overlay open';
       document.getElementById('gwForm').style.opacity = '.35';
       document.getElementById('gwForm').style.pointerEvents = 'none';
       btn.textContent = 'Pietecies!';
     } else {
-      btn.disabled = false;
-      btn.textContent = 'Piedalities izloze →';
-      msg.textContent = data.message || 'Kaut kas nogaja greizi.';
+      btn.disabled = false; btn.textContent = 'Piedalīties izlozē →';
+      msg.textContent = data.message || 'Kaut kas nogāja greizi.';
       msg.className = 'gw-msg err';
     }
   } catch (e) {
-    btn.disabled = false;
-    btn.textContent = 'Piedalities izloze →';
-    msg.textContent = 'Savienojuma kludas. Megini velreiz!';
+    btn.disabled = false; btn.textContent = 'Piedalīties izlozē →';
+    msg.textContent = 'Savienojuma kļūda. Mēģini vēlreiz!';
     msg.className = 'gw-msg err';
   }
 };
