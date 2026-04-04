@@ -1,13 +1,13 @@
 <div class="gw-wrap">
   <div class="gw-card">
     <div class="gw-left">
-      <div class="gw-badge">IZLOZE</div>
+      <div class="gw-badge">🎰 IZLOZE</div>
       <h2 class="gw-title">Piedalies un laime!</h2>
-      <p class="gw-desc">Ievadi slepeno kodu un registrejies izlozei. Par katru izterto EUR 1 tu sanem papildus bileti!</p>
+      <p class="gw-desc">Ievadi slepeno kodu un registrejies izlozei.<br>Par katru izterto <strong>€1</strong> tu sanem papildus bileti!</p>
       <div class="gw-prizes">
-        <div class="gw-prize"><span>1.</span><strong>EUR 50</strong></div>
-        <div class="gw-prize"><span>2.</span><strong>EUR 20</strong></div>
-        <div class="gw-prize"><span>3.</span><strong>EUR 10</strong></div>
+        <div class="gw-prize"><span>🥇</span><div><strong>€50</strong><small>1. vieta</small></div></div>
+        <div class="gw-prize"><span>🥈</span><div><strong>€20</strong><small>2. vieta</small></div></div>
+        <div class="gw-prize"><span>🥉</span><div><strong>€10</strong><small>3. vieta</small></div></div>
       </div>
     </div>
     <div class="gw-right">
@@ -30,30 +30,36 @@
             <input class="gw-input" id="gwEmail" type="email" placeholder="janis@inbox.lv">
           </div>
         </div>
-        <button class="gw-btn" id="gwBtn" type="button" onclick="gwSubmit()">Piedalites izloze</button>
+        <button class="gw-btn" id="gwBtn" type="button" onclick="gwSubmit()">Piedalities izloze →</button>
         <p class="gw-msg" id="gwMsg"></p>
       </form>
     </div>
   </div>
 </div>
+
 <div class="gw-overlay" id="gwOverlay">
   <div class="gw-modal">
-    <div class="gw-modal-icon">Apsveicu!</div>
-    <p>Tu esi veiksmigi pietecies izlozei. Mes sazinasimies ar uvaretajiem.</p>
-    <button onclick="document.getElementById('gwOverlay').style.display='none'">Aizverts</button>
+    <div class="gw-modal-icon">🎉</div>
+    <h3 class="gw-modal-title">Apsveicu!</h3>
+    <p class="gw-modal-text">Tu esi veiksmigi pietecies izlozei!<br>Mes sazinasimies ar uzvaretajiem.<br><br>⭐ Laimegu zvaigznu zimi!</p>
+    <button class="gw-modal-close" onclick="document.getElementById('gwOverlay').style.display='none'">Aizverts</button>
   </div>
 </div>
+
 <style>
 .gw-wrap{padding:60px 16px;background:#f8f6f2}
-.gw-card{max-width:1080px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 4px 32px rgba(0,0,0,.1)}
+.gw-card{max-width:1080px;margin:0 auto;background:#fff;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 4px 32px rgba(0,0,0,.1);border:1px solid #e5e1da}
 .gw-left{background:linear-gradient(145deg,#1a1a2e,#0f3460);padding:52px 44px;display:flex;flex-direction:column;justify-content:center}
 .gw-badge{display:inline-block;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#ffd700;font-size:.75rem;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:99px;margin-bottom:20px;width:fit-content}
 .gw-title{font-size:2rem;font-weight:800;color:#fff;margin:0 0 14px;line-height:1.25}
 .gw-desc{color:rgba(255,255,255,.75);font-size:.9375rem;line-height:1.7;margin:0 0 28px}
+.gw-desc strong{color:#ffd700}
 .gw-prizes{display:flex;flex-direction:column;gap:10px}
-.gw-prize{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;color:#fff}
-.gw-prize span{color:rgba(255,255,255,.6);font-size:.875rem}
-.gw-prize strong{color:#ffd700;font-size:1.0625rem;font-weight:800}
+.gw-prize{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px}
+.gw-prize span{font-size:1.375rem}
+.gw-prize div{display:flex;flex-direction:column;gap:2px}
+.gw-prize strong{color:#ffd700;font-size:1.0625rem;font-weight:800;line-height:1}
+.gw-prize small{color:rgba(255,255,255,.6);font-size:.8125rem}
 .gw-right{padding:48px 44px;display:flex;align-items:center}
 .gw-right form{width:100%}
 .gw-field{margin-bottom:16px}
@@ -64,20 +70,24 @@
 .gw-input:focus{border-color:#1a1a2e;box-shadow:0 0 0 3px rgba(26,26,46,.08)}
 .gw-code{font-family:monospace;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#1a1a2e}
 .gw-input::placeholder{color:#9ca3af;font-family:inherit;letter-spacing:0;text-transform:none;font-weight:400}
-.gw-btn{width:100%;padding:14px;background:#1a1a2e;color:#ffd700;font-weight:700;font-size:1rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s;margin-top:6px;font-family:inherit}
-.gw-btn:hover:not(:disabled){background:#0f3460}
-.gw-btn:disabled{opacity:.5;cursor:not-allowed}
+.gw-btn{width:100%;padding:14px;background:#1a1a2e;color:#ffd700;font-weight:700;font-size:1rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .15s;margin-top:6px;font-family:inherit;letter-spacing:.02em}
+.gw-btn:hover:not(:disabled){background:#0f3460;transform:translateY(-1px)}
+.gw-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
 .gw-msg{margin:8px 0 0;font-size:.8125rem;text-align:center;min-height:1.2em}
 .gw-msg.err{color:#dc2626}
+.gw-msg.ok{color:#16a34a}
 .gw-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99999;align-items:center;justify-content:center;padding:20px}
 .gw-overlay.open{display:flex}
-.gw-modal{background:#fff;border-radius:20px;padding:48px 36px;text-align:center;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:gwPop .35s cubic-bezier(.175,.885,.32,1.275)}
-.gw-modal-icon{font-size:2rem;font-weight:800;color:#1a1a2e;margin-bottom:12px}
-.gw-modal p{color:#6b7280;font-size:.9375rem;line-height:1.7;margin:0 0 24px}
-.gw-modal button{background:#1a1a2e;color:#ffd700;border:none;padding:12px 32px;border-radius:99px;font-weight:700;font-size:.9375rem;cursor:pointer;font-family:inherit}
+.gw-modal{background:#fff;border-radius:20px;padding:48px 36px;text-align:center;max-width:400px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.25);animation:gwPop .35s cubic-bezier(.175,.885,.32,1.275)}
+.gw-modal-icon{font-size:3.5rem;margin-bottom:12px}
+.gw-modal-title{font-size:1.625rem;font-weight:800;color:#1a1a2e;margin:0 0 12px}
+.gw-modal-text{color:#6b7280;font-size:.9375rem;line-height:1.7;margin:0 0 24px}
+.gw-modal-close{background:#1a1a2e;color:#ffd700;border:none;padding:12px 32px;border-radius:99px;font-weight:700;font-size:.9375rem;cursor:pointer;font-family:inherit;transition:background .2s}
+.gw-modal-close:hover{background:#0f3460}
 @keyframes gwPop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
 @media(max-width:768px){.gw-card{grid-template-columns:1fr}.gw-left,.gw-right{padding:36px 24px}.gw-row{grid-template-columns:1fr}.gw-title{font-size:1.5rem}}
 </style>
+
 <script>
 window.gwSubmit = async function() {
   var btn = document.getElementById('gwBtn');
@@ -86,34 +96,54 @@ window.gwSubmit = async function() {
   var name = (document.getElementById('gwName').value || '').trim();
   var phone = (document.getElementById('gwPhone').value || '').trim();
   var email = (document.getElementById('gwEmail').value || '').trim();
-  msg.className = 'gw-msg'; msg.textContent = '';
-  if (!code || !name || !phone || !email) { msg.textContent = 'Ludzu aizpildi visus laukus.'; msg.className = 'gw-msg err'; return; }
-  if (code !== 'WINCASH26') { msg.textContent = 'Nepareizs kods!'; msg.className = 'gw-msg err'; return; }
-  if (!email.includes('@')) { msg.textContent = 'Nepareizs e-pasts.'; msg.className = 'gw-msg err'; return; }
-  btn.disabled = true; btn.textContent = 'Registre...';
+  msg.className = 'gw-msg';
+  msg.textContent = '';
+  if (!code || !name || !phone || !email) {
+    msg.textContent = 'Ludzu aizpildi visus laukus.';
+    msg.className = 'gw-msg err';
+    return;
+  }
+  if (code !== 'WINCASH26') {
+    msg.textContent = 'Nepareizs kods - parbaudi un megini velreiz!';
+    msg.className = 'gw-msg err';
+    return;
+  }
+  if (!email.includes('@') || !email.includes('.')) {
+    msg.textContent = 'Ievadi derigu e-pasta adresi.';
+    msg.className = 'gw-msg err';
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Registre...';
   try {
-    var cid = document.querySelector('.gw-wrap') ? (document.querySelector('.gw-wrap').dataset.cid || 'guest') : 'guest_' + Date.now();
-    var r = await fetch('https://protective-compassion-production-ff43.up.railway.app/giveaway/enter', {
-      method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({code: code, name: name, phone: phone, email: email, customerId: cid})
+    var resp = await fetch('https://protective-compassion-production-ff43.up.railway.app/giveaway/enter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code: code, name: name, phone: phone, email: email, customerId: 'guest_' + Date.now() })
     });
-    var d = await r.json();
-    if (d.success || d.alreadyEntered || d.entries >= 0) {
+    var data = await resp.json();
+    if (data.success || data.alreadyEntered || data.entries >= 0 || data.message) {
       var ov = document.getElementById('gwOverlay');
-      ov.style.display = 'flex'; ov.className = 'gw-overlay open';
+      ov.style.display = 'flex';
+      ov.className = 'gw-overlay open';
       document.getElementById('gwForm').style.opacity = '.35';
       document.getElementById('gwForm').style.pointerEvents = 'none';
       btn.textContent = 'Pietecies!';
     } else {
-      btn.disabled = false; btn.textContent = 'Piedalites izloze';
-      msg.textContent = d.message || 'Kludas. Megini velreiz!'; msg.className = 'gw-msg err';
+      btn.disabled = false;
+      btn.textContent = 'Piedalities izloze →';
+      msg.textContent = data.message || 'Kaut kas nogaja greizi.';
+      msg.className = 'gw-msg err';
     }
-  } catch(e) {
-    btn.disabled = false; btn.textContent = 'Piedalites izloze';
-    msg.textContent = 'Savienojuma kludas!'; msg.className = 'gw-msg err';
+  } catch (e) {
+    btn.disabled = false;
+    btn.textContent = 'Piedalities izloze →';
+    msg.textContent = 'Savienojuma kludas. Megini velreiz!';
+    msg.className = 'gw-msg err';
   }
 };
 </script>
+
 {% schema %}
 {
   "name": "Izloze Forma",
